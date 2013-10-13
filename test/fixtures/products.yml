@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  subtitle: MyString
+  status: MyString
+  price: 9.99
+  buy_link: MyString
+  images: MyString
+  like_num: 1
+  own_num: 1
+  author: MyString
+  description: MyText
+
+two:
+  name: MyString
+  subtitle: MyString
+  status: MyString
+  price: 9.99
+  buy_link: MyString
+  images: MyString
+  like_num: 1
+  own_num: 1
+  author: MyString
+  description: MyText

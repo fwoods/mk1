@@ -1,0 +1,263 @@
+<section class="container-fluid">
+<div class="thing_wrapper">
+<header id="thing_header">
+  <hgroup>
+    <h1><%= @product.name %></h1>
+
+    <h2><%= @product.subtitle%></h2>
+  </hgroup>
+  <nav>
+      <ul class="nav nav-pills">
+      <li class=" active"><%= link_to(@product) do %>
+            <i class="icon-magic"></i><span>产品</span>
+        <% end %>
+      <li class=""><a href=""><i class="icon-book"></i><span>评测</span>
+        <small>2</small>
+      </a></li>
+      <li class=""><a href=""><i class="icon-code-fork"></i><span>更新</span>
+        <small></small>
+      </a></li>
+      <li class=""><a href=""><i class="icon-comments"></i><span>留言</span>
+        <small></small>
+      </a></li>
+    </ul>
+  </nav>
+</header>
+<section id="thing_actions">
+  <div class="shop">
+    <div class="price"></div>
+    <div class="buy">
+      <a href="<%=@product.buy_link%>" class="btn btn-info track_event" data-action="buy"
+         data-category="domestic" data-label="Adidas miCoach Pacer" target="_blank"
+         title="<%=@product.name%>"><i class="icon-location-arrow icon-large"></i>网购</a>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="fanciers">
+      <a href="#" class="unfancied" data-method="post" data-remote="true" data-target="#login-modal"
+         data-toggle="modal" rel="nofollow" title="喜欢此产品"><i class="icon-heart"></i><i
+      class="icon-heart-empty"></i><span class="fanciers_count"><%= @product.like_num %></span><span>喜欢</span></a>
+    </div>
+    <div class="owners">
+      <a href="#" class="unowned" data-method="post" data-remote="true" data-target="#login-modal"
+         data-toggle="modal" rel="nofollow" title="拥有此产品"><i class="icon-check"></i><i
+      class="icon-check-empty"></i><span class="owners_count"><%= @product.own_num %></span><span>拥有</span></a>
+    </div>
+
+    <div class="share"><a href="#login-modal" data-keyboard="false" data-toggle="modal" title="分享"></a></div>
+    <div class="supplier">
+      <a href="#thing_supplier" data-keyboard="false" data-toggle="modal" title="提供产品"><i
+      class="icon-truck"></i><span>我想提供此产品</span></a>
+    </div>
+  </div>
+  <div class="author_info">
+    <div class="author">
+      <a href="..\users\510f20a47373c2763d000036.htm"><img alt="imsummer"
+                                                           src="http://making-photos.b0.upaiyun.com/users/03c6625957c96b90348b7e204c5fc486.jpg!small"></a><a
+    href="..\users\510f20a47373c2763d000036.htm"><%= @product.author %></a>
+      <time datetime="2013-03-04T12:06:00+08:00"><%= @product.record_timestamps %></time>
+    </div>
+  </div>
+  <div class="action_modals">
+    <div class="modal hide fade" id="thing_supplier">
+      <form accept-charset="UTF-8" action="/suppliers" class="simple_form form-horizontal" data-remote="true"
+            id="new_supplier" method="post">
+        <div style="margin:0;padding:0;display:inline">
+          <input name="utf8" type="hidden" value="✓">
+        </div>
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal" type="button">
+            <raw>×</raw>
+          </button>
+          <h4><%=@product.name%></h4>
+        </div>
+        <div class="modal-body">
+          <p>如果您在销售此产品，或能提供货源，并且愿意与我们合作，请留下真实信息，我们会尽快联络您:</p>
+
+          <div class="control-group string required supplier_name">
+            <label class="string required control-label" for="supplier_name"><abbr title="required">*</abbr>
+              姓名</label>
+
+            <div class="controls"><input class="string required" id="supplier_name" name="supplier[name]"
+                                         required="required" size="100" type="text"></div>
+          </div>
+          <div class="control-group string required supplier_contact">
+            <label class="string required control-label" for="supplier_contact"><abbr
+            title="required">*</abbr> 联系方式</label>
+
+            <div class="controls"><input class="string required" id="supplier_contact"
+                                         name="supplier[contact]" required="required" size="100"
+                                         type="text"></div>
+          </div>
+          <div class="control-group url optional supplier_url">
+            <label class="url optional control-label" for="supplier_url">网店链接</label>
+
+            <div class="controls"><input class="string url optional" id="supplier_url" name="supplier[url]"
+                                         size="100" type="url" value=""></div>
+          </div>
+          <div class="control-group text required supplier_description">
+            <label class="text required control-label" for="supplier_description"><abbr
+            title="required">*</abbr> 简要说明</label>
+
+            <div class="controls"><textarea class="text required" cols="40" id="supplier_description"
+                                            name="supplier[description]" required="required"
+                                            rows="5"></textarea></div>
+          </div>
+          <div class="control-group hidden supplier_thing_title">
+            <div class="controls"><input class="hidden" id="supplier_thing_title"
+                                         name="supplier[thing_title]" type="hidden"
+                                         value="<%= @product.name %>"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" name="button" type="button">取消</button>
+          <input class="btn btn-primary" name="commit" type="submit" value="发布"></div>
+      </form>
+    </div>
+   </div>
+</section>
+
+<section id="thing_content">
+  <div class="photos">
+    <div class="carousel slide" id="photo_main">
+      <div class="carousel-inner">
+        <div class="item active">
+          <%= image_tag(@product.images) %>
+        </div>
+      <!-- More pics go here. script will roll them.
+        <div class="item "><img alt="Adidas-miCoach.jpg"
+                                src="http://making-photos.b0.upaiyun.com/photos/c8d5d40fd26c1e5b58b1a9a13953aa54.jpg!review">
+        </div>
+      -->
+      </div>
+      <a href="#photo_main" class="carousel-control left hide" data-slide="prev">
+        <i class="icon-angle-left"></i>
+      </a>
+      <a href="#photo_main" class="carousel-control right hide" data-slide="next">
+        <i class="icon-angle-right"></i>
+      </a>
+      <ul class="photo_indicators" height="104px">
+        <li class="thumbnail" data-slide-to="0" data-target="#photo_main"><%= image_tag(@product.images,:height => "80") %>
+        </li>
+
+       <!--  More thumbnail pics go here.
+       <li class="thumbnail" data-slide-to="1" data-target="#photo_main"><img alt="Adidas-miCoach.jpg"
+                                                                               src="http://making-photos.b0.upaiyun.com/photos/c8d5d40fd26c1e5b58b1a9a13953aa54.jpg!small">
+        </li>-->
+      </ul>
+    </div>
+  </div>
+  <div class="post_content"><%=	 @product.description %>
+  </div>
+  <aside id="thing_reviews"><h4><i class="icon-book"></i>评测<a href="#" class="btn disabled"
+                                                              data-target="#login-modal"
+                                                              data-toggle="modal"><i class="icon-pencil"></i>我想写评测</a>
+    <a href="adidas-micoach-pacer\reviews.htm"><i class="icon-double-angle-right icon-large pull-right"></i></a></h4>
+    <!-- No comment for now
+    <ul id="reviews">
+      <li class="review">
+        <article class="post">
+          <header><h3><a href="adidas-micoach-pacer\reviews\514b2da27373c2b4ab00004e.htm">你的私人健身教练micoach</a>
+          </h3>
+
+            <div class="author"><a href="..\users\512368027373c260be0000df.htm"><img alt="小虾酿苦瓜"
+                                                                                     src="http://making-photos.b0.upaiyun.com/users/8b30790c79e59b0860cbe88d8e1ceef5.jpg!small"></a><a
+            href="..\users\512368027373c260be0000df.htm">小虾酿苦瓜</a>
+              <time datetime="2013-03-21T23:56:18+08:00">5 个月前</time>
+            </div>
+            <div class="score" data-score="4" title="good" style="cursor: default; width: 100px;">
+              <img src="/assets/star-on.png" alt="1" title="good">&nbsp;<img
+            src="/assets/star-on.png" alt="2" title="good">&nbsp;<img
+            src="/assets/star-on.png" alt="3" title="good">&nbsp;<img
+            src="/assets/star-on.png" alt="4" title="good">&nbsp;<img
+            src="/assets/star-off.png" alt="5" title="good"><input type="hidden"
+                                                                   name="score" value="4"
+                                                                   readonly="readonly">
+            </div>
+          </header>
+          <section>
+            <div class="post_content">&nbsp;&nbsp;一、为什么选择micoach&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+              &nbsp; &nbsp;
+              运动的目的是为了什么？健康，减肥，速度，追求新的突破而得到的自我满足感，或是更远的距离挑战？或许都有，但对非职业运动员而言，绝大多人可能也就是为了提高身体素质，强健体魄。当然，如果你读过
+              @李笑来 的《把时间当做朋友》，你或许还记的下面这段：&nbsp; &nbsp; &nbsp;
+              好了，你现在已经知道运动的重要性了，并开始决定锻炼，但一段时间之后你或许会发现没啥效果，或者不小心运动过度造成伤病。所以，如何制定一个最适合你的合理锻炼计划才是最为关键的。&nbsp;
+              &nbsp; &nbsp; &nbsp;micoach的正确发音不是「米Coach」、「My ......<a
+            href="adidas-micoach-pacer\reviews\514b2da27373c2b4ab00004e.htm"
+            class="details"><i class="icon-book"></i></a></div>
+          </section>
+          <footer><span class="lovers"><i class="icon-thumbs-up"></i><small>9/9</small></span><span
+          class="comments"><a
+          href="adidas-micoach-pacer\reviews\514b2da27373c2b4ab00004e.htm"><i
+          class="icon-comments-alt"></i></a></span></footer>
+        </article>
+      </li>
+      <li class="review">
+        <article class="post">
+          <header><h3><a
+          href="adidas-micoach-pacer\reviews\51636b837373c29a6800002d.htm">没有GPS是最大的缺陷</a>
+          </h3>
+
+            <div class="author"><a href="..\users\516369c97373c29a6800002b.htm"><img alt="汉尼拔巴卡"
+                                                                                     src="http://making-photos.b0.upaiyun.com/users/a89042b89b910a5170fcbe2a623f1ce5.jpg!small"></a><a
+            href="..\users\516369c97373c29a6800002b.htm">汉尼拔巴卡</a>
+              <time datetime="2013-04-09T09:14:43+08:00">4 个月前</time>
+            </div>
+            <div class="score" data-score="4" title="good" style="cursor: default; width: 100px;">
+              <img src="/assets/star-on.png" alt="1" title="good">&nbsp;<img
+            src="/assets/star-on.png" alt="2" title="good">&nbsp;<img
+            src="/assets/star-on.png" alt="3" title="good">&nbsp;<img
+            src="/assets/star-on.png" alt="4" title="good">&nbsp;<img
+            src="/assets/star-off.png" alt="5" title="good"><input type="hidden"
+                                                                   name="score" value="4"
+                                                                   readonly="readonly">
+            </div>
+          </header>
+          <section>
+            <div class="post_content">
+              “找到步伐传感器，未找到心率传感器，按中央键重新搜索，或选择锻炼。”坚持跑步会使人变得更加健康。从当年看球鞋杂志开始，Nike的华夫底，Runner's
+              World又将Asics的Kayano 1X评为年度跑鞋，Mizuno
+              Wave技术测评，NewBalance的健康跑活动便在我心中种下了关于跑步的种子，而看过村上春树先生的《当我谈跑步时我谈些什么》之后，我又在国内的跑步论坛RunBible上混迹了一段时间。这些经历，都在触动着我的神经，而当我得知家人患病的消息之后，我便痛下决心，坚持跑步。一个人，没有教练，没有跑友，甚至连跑鞋都没有。刚开始，断断续续的跑，总觉得自己时间花了，也没有起到效果。后来在网上，发现了Adidas的micoach系列，了解了一段时间之后，下了血本，花了570大元购入了一套......<a
+            href="adidas-micoach-pacer\reviews\51636b837373c29a6800002d.htm"
+            class="details"><i class="icon-book"></i></a></div>
+          </section>
+          <footer><span class="comments"><a
+          href="adidas-micoach-pacer\reviews\51636b837373c29a6800002d.htm"><i
+          class="icon-comments-alt"></i>1</a></span></footer>
+        </article>
+      </li>
+    </ul>-->
+  </aside>
+  <!--  No comment
+  <aside data-count="8" data-postid="51341db77373c2f9a0000066" data-signin="false" data-title="回复"
+         id="thing_comments">
+    <div class="comments">
+      <h4>
+        <i class="icon-comments-alt"></i>
+        回复
+      </h4>
+      <ul>
+      </ul>
+      <form id="create_comment" class="comment_form">
+        <p class="login_tip">
+          需要您
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#login-modal">登录</a>
+          之后才可以进行回复
+        </p>
+
+        <div class="controls">
+          <textarea name="comment_content" rows="5" maxlength="300" required="" disabled=""
+                    class="disabled"></textarea>
+
+          <p class="help-block">不超过300字</p>
+        </div>
+        <button type="submit" class="btn disabled" disabled="">
+          <i class="icon-comment-alt"></i>
+          发布
+        </button>
+      </form>
+    </div>
+  </aside>-->
+</section>
+</div>
+</section>
+
