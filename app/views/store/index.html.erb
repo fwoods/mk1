@@ -19,7 +19,9 @@
 		<li class="thing">
 			<div class="pre_ribbon stock"><span><%=product.status%></span></div>
 			<%= link_to(product) do %>
-				<%= image_tag(product.images) %>
+              <%if product.photos.count !=0 then %>
+				<%= image_tag(product.photos[0].photofile.url(:nomal)) %>
+              <%end %>
 			<% end %>
 			
 			<h4 data-placement="bottom" data-toggle="tooltip" title="" data-original-title="<%=product.name%>"><%=product.name%></h4><p><span class="fanciers"><i class="icon-heart"></i><span class="fanciers_count"><%=product.like_num%></span></span><span class="owners"><i class="icon-check"></i><span class="owners_count"><%=product.own_num%></span></span><span class="reviews_count"><i class="icon-book"></i>0</span><small>¥ <%=product.price%></small></p>
@@ -44,9 +46,11 @@
 <% @products[0..3].each do |product| %>
 		<li class="thing">
 			<%= link_to(product) do %>
-				<%= image_tag(product.images) %>
-			<% end %>
-			
+              <%if product.photos.count !=0 then %>
+				<%= image_tag(product.photos[0].photofile.url(:nomal)) %>
+
+              <% end %>
+            <% end %>
 			<h4 data-placement="bottom" data-toggle="tooltip" title="" data-original-title="<%=product.name%>"><%=product.name%></h4><p><span class="fanciers"><i class="icon-heart"></i><span class="fanciers_count"><%=product.like_num%></span></span>
 			</p>
 		</li>
@@ -54,11 +58,9 @@
 
 	</ul>
 
-<h4>评测</h4>
-	<ul id="home_new_reviews">
-		<li><a href="/things/call-of-duty-black-ops-ii-gaming-eyewear/reviews/52206bfab10be53c42000003">建设中</a></li>
-		<li><a href="/things/necomimi-brainwave-cat-ears/reviews/52201d63b10be5a7ab00002e">测试数据</a></li>
-	</ul>
+<h4>最新评论</h4>
+	<ul id="home_new_reviews">	</ul>
+  <ul class="ds-recent-comments" data-num-items="5" data-show-avatars="0" data-show-time="1" data-excerpt-length="20"></ul>
 </div>
 	<div id="site_filling"><small>粤ICP备88888号</small></div>
 </aside>

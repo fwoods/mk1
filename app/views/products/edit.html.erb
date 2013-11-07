@@ -1,6 +1,30 @@
-<h1>Editing product</h1>
+<h1 class="text-center">产品编辑</h1>
+<div class="container">
+    <div class="row">
+      <div class="span10">
+        <%= render 'form' %>
 
-<%= render 'form' %>
+        <div class="row">
+          <div class="span5 control-group">
+            <%= render :partial => 'photos/photo_list', :locals=>{:photos=> @product.photos} %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+            <%=	 render :partial => 'photos/new_photo', :locals => {:photo => Photo.new(:product_id =>@product.id)} %>
+          </div>
+          <div class="span5 control-group">
+            <%= render :partial => 'review_photos/review_photo_list', :locals=>{:review_photos=>@product.review_photos} %>
+            <%= render :partial => 'review_photos/new_review_photo', :locals => {:rp=>ReviewPhoto.new(:product_id =>@product.id)} %>
+
+          </div>
+        </div>
+       <%= link_to 'Show', @product %> |
+       <%= link_to 'Back', products_path %>
+
+      </div>
+    </div>
+</div>
+
+
+
+
+
+

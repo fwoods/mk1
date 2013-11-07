@@ -1,8 +1,13 @@
 Mk1::Application.routes.draw do
+  resources :photos
+
+
   get "store/index"
 
   resources :products
+  resources :review_photos
 
+  #match 'review_photos/:id', to:'review_photos@show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

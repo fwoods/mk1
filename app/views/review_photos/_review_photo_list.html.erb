@@ -1,0 +1,20 @@
+<h4>Review照片</h4>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Thumb</th>
+    <th>右键获取照片URL</th>
+    <th>Edit</th>
+    <th>Destroy</th>
+  </tr>
+  </thead>
+
+  <% review_photos.each do |photo| %>
+      <tr>
+        <td><%= image_tag photo.photofile.url(:thumb) %></td>
+        <td><%= link_to 'URL', photo.photofile.url(:nomal) %></td>
+        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
+        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>

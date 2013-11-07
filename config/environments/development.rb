@@ -34,4 +34,7 @@ Mk1::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  #Config the paperclip's working path.  use "which convert" to identify this path.
+  Paperclip.options[:command_path] = "/usr/bin"
 end

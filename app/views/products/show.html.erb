@@ -121,14 +121,13 @@
   <div class="photos">
     <div class="carousel slide" id="photo_main">
       <div class="carousel-inner">
-        <div class="item active">
-          <%= image_tag(@product.images) %>
-        </div>
-      <!-- More pics go here. script will roll them.
-        <div class="item "><img alt="Adidas-miCoach.jpg"
-                                src="http://making-photos.b0.upaiyun.com/photos/c8d5d40fd26c1e5b58b1a9a13953aa54.jpg!review">
-        </div>
-      -->
+
+        <%for i in 0...@product.photos.count do  %>
+            <div class="item<%=if i==0 then ' active' else ''end%>">
+              <%= image_tag(@product.photos[i].photofile.url) %>
+            </div>
+        <%end%>
+
       </div>
       <a href="#photo_main" class="carousel-control left hide" data-slide="prev">
         <i class="icon-angle-left"></i>
@@ -137,17 +136,16 @@
         <i class="icon-angle-right"></i>
       </a>
       <ul class="photo_indicators" height="104px">
-        <li class="thumbnail" data-slide-to="0" data-target="#photo_main"><%= image_tag(@product.images,:height => "80") %>
-        </li>
 
-       <!--  More thumbnail pics go here.
-       <li class="thumbnail" data-slide-to="1" data-target="#photo_main"><img alt="Adidas-miCoach.jpg"
-                                                                               src="http://making-photos.b0.upaiyun.com/photos/c8d5d40fd26c1e5b58b1a9a13953aa54.jpg!small">
-        </li>-->
+        <% for i in 0...@product.photos.count do%>
+            <li class="thumbnail" data-slide-to="<%=i%>" data-target="#photo_main">
+              <%= image_tag(@product.photos[i].photofile.url(:thumb)) %>
+            </li>
+        <%end %>
       </ul>
     </div>
   </div>
-  <div class="post_content"><%=	 @product.description %>
+  <div class="post_content"><%=	 @product.description.html_safe %>
   </div>
   <aside id="thing_reviews"><h4><i class="icon-book"></i>评测<a href="#" class="btn disabled"
                                                               data-target="#login-modal"
@@ -227,6 +225,12 @@
       </li>
     </ul>-->
   </aside>
+  <!-- Duoshuo Comment BEGIN -->
+  <div class="ds-thread" data-thread-key="product=<%=@product.id%>" data-title="<%=@product.name%>" ></div>
+  <script type="text/javascript">
+      ...//javascript部分略去
+  </script>
+  <!-- Duoshuo Comment END -->
   <!--  No comment
   <aside data-count="8" data-postid="51341db77373c2f9a0000066" data-signin="false" data-title="回复"
          id="thing_comments">

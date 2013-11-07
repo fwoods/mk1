@@ -39,3 +39,17 @@
 <br />
 
 <%= link_to 'New Product', new_product_path %>
+
+Dump for seed.rb
+<% @products.each do |product| %>
+    product.create(:name =><%= product.name %>,
+        :subtitle =><%= product.subtitle %>,
+        :status =><%= product.status %> ,
+        :price =><%= product.price %>,
+        :buy_link =>  <%= product.buy_link %>,
+        :images => <%= product.images %>,
+        :like_num =><%= product.like_num %>,
+        :own_num =><%= product.own_num %>,
+        :author=><%= product.author %>,
+        :description =%{<%= product.description %>})
+<% end %>

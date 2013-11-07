@@ -1,3 +1,5 @@
+
+<%=	 javascript_include_tag "jquery.qeditor" %>
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -10,48 +12,52 @@
       </ul>
     </div>
   <% end %>
+   <div class="span5">
+      <div class="field">
+        <%= f.label :name %>    <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :subtitle %>
+        <%= f.text_field :subtitle %>
+      </div>
+      <div class="field">
+        <%= f.label :status %>
+        <%= f.text_field :status %>
+      </div>
+      <div class="field">
+        <%= f.label :price %>
+        <%= f.text_field :price %>
+      </div>
+   </div>
+   <div class="span4">
+      <div class="field">
+        <%= f.label :buy_link %>
+        <%= f.text_field :buy_link %>
+      </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :subtitle %><br />
-    <%= f.text_field :subtitle %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :buy_link %><br />
-    <%= f.text_field :buy_link %>
-  </div>
-  <div class="field">
-    <%= f.label :images %><br />
-    <%= f.text_field :images %>
-  </div>
-  <div class="field">
-    <%= f.label :like_num %><br />
-    <%= f.number_field :like_num %>
-  </div>
-  <div class="field">
-    <%= f.label :own_num %><br />
-    <%= f.number_field :own_num %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+      <div class="field">
+        <%= f.label :like_num %>
+        <%= f.number_field :like_num %>
+      </div>
+      <div class="field">
+        <%= f.label :own_num %>
+        <%= f.number_field :own_num %>
+      </div>
+      <div class="field">
+        <%= f.label :author %>
+        <%= f.text_field :author %>
+      </div>
+   </div>
+  <div class="field span10">
+    <p><%= f.label :description, :display => "block" %><br/>  </p>
+    <%= f.text_area :description%>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
+
+<script type="text/javascript">
+    $("#product_description").qeditor({});
+</script>
