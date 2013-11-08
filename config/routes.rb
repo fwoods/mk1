@@ -3,6 +3,8 @@ Mk1::Application.routes.draw do
 
 
   get "store/index"
+  get "store/things_new"
+  get "store/things_fancy"
 
   resources :products
   resources :review_photos

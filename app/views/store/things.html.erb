@@ -1,0 +1,37 @@
+<section class="container-fluid">
+  <div class="things_wrapper">
+    <section id="things_index">
+      <nav class="btn-group">
+        <a href="/store/things_new" class="btn <%=if @filter == :things_new then 'active' end %>"><i class="icon-rocket"></i>最新</a>
+        <a href="/store/things_fancy" class="btn <%=if @filter == :things_fancy then 'active' end%>"><i class="icon-bullseye"></i>喜爱</a>
+
+      </nav>
+      <ul>
+        <% @products.each do |product| %>
+            <li class="thing">
+              <div class="pre_ribbon stock"><span><%= product.status %></span></div>
+              <%= link_to(product) do %>
+                  <% if product.photos.count !=0 then %>
+                      <%= image_tag(product.photos[0].photofile.url(:nomal)) %>
+                  <% end %>
+              <% end %>
+
+              <h4 data-placement="bottom" data-toggle="tooltip" title="" data-original-title="<%= product.name %>"><%= product.name %></h4>
+
+              <p>
+                <span class="fanciers">
+                  <i class="icon-heart"></i>
+                  <span class="fanciers_count"><%= product.like_num %></span>
+                </span>
+                <span class="owners"><i class="icon-check"></i><span class="owners_count"><%= product.own_num %></span></span><span class="reviews_count"><i class="icon-book"></i>0</span>
+                <small>¥ <%= product.price %></small>
+              </p>
+            </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</section>
+
+
+

@@ -8,13 +8,7 @@
 		<header id="home_welcome"><h2><i class="icon-road"></i>优雅母婴生活</h2></header>
 		<section id="home_things">
 		<ul>
-<!--
-		<li class="thing">
-			<div class="pre_ribbon stock"><span>现货</span></div>
-			<a href="/things/fitbit-flex" target="_blank"><img alt="Fitbit Flex " src="http://making-photos.b0.upaiyun.com/photos/e932cfad48052cc3ca98e539d89e83fe.png!normal"></a>
-			<h4 data-placement="bottom" data-toggle="tooltip" title="" data-original-title="Fitbit Flex  - 运动及睡眠追踪腕带">Fitbit Flex  - 运动及睡眠追踪腕带</h4><p><span class="fanciers"><i class="icon-heart"></i><span class="fanciers_count">115</span></span><span class="owners"><i class="icon-check"></i><span class="owners_count">26</span></span><span class="reviews_count"><i class="icon-book"></i>7</span><small>¥ 858.00</small></p>
-		</li>
--->
+
 <% @products.each do |product| %>
 		<li class="thing">
 			<div class="pre_ribbon stock"><span><%=product.status%></span></div>
@@ -29,20 +23,17 @@
 <% end %>
 
 		</ul>
+<div class="digg_pagination span6">
+  <%= will_paginate @products %>
+</div>
 		</section>
-
 
 
 <aside id="home_news">
 <div class="wrapper">
 <h4>最新<a href="/things"><i class="icon-double-angle-right icon-large"></i></a></h4>
 	<ul id="home_new_things">
-<!--rem by fw
-		<li class="thing">
-			<a href="/things/wu-ying-jian-azio-levetron-mech4-kb588u-zhuan-ye-ji-jie-you-xi-jian-pan" target="_blank"><img alt="无影剑 AZiO LeveTron MECH4  KB588U 专业机械游戏键盘" src="http://making-photos.b0.upaiyun.com/photos/4e78473f2528358488bb9df6797c66a1.jpg!normal"></a>
-			<h4 data-placement="bottom" data-toggle="tooltip" title="" data-original-title="无影剑 AZiO LeveTron MECH4  KB588U 专业机械游戏键盘 - 游戏键盘中的变形金刚">无影剑 AZiO LeveTron MECH4  KB588U 专业机械游戏键盘 - 游戏键盘中的变形金刚</h4><p><span class="fanciers"><i class="icon-heart"></i><span class="fanciers_count">1</span></span></p>
-		</li>
--->
+
 <% @products[0..3].each do |product| %>
 		<li class="thing">
 			<%= link_to(product) do %>
