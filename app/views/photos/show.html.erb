@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= image_tag(@photo.photofile.url) %>
+</p>
+
+
+
+<%= link_to '删除', @photo, method: :delete, data: { confirm: 'Are you sure?' } %>|
+<%= link_to '回到产品编辑', edit_product_path(@photo.product_id) %>

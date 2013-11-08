@@ -1,0 +1,21 @@
+<p>添加走马灯照片</p>
+<%= form_for(photo, :class=>"form-horizontal") do |f|%>
+
+    <div class="control-group">
+      <!--<%= f.label :product_id, :class=>"control-label" %>-->
+      <div class="controls">
+        <%= f.hidden_field :product_id %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Upload Image</label>
+      <div class="controls">
+        <%= f.file_field :photofile %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%=	 f.submit "添加", :class=>"btn"%>
+    </div>
+<%end%>
