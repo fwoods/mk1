@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17042c66-e029-4daa-ae57-c36530c01a05" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/mk1.iml" afterPath="$PROJECT_DIR$/.idea/mk1.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+    <list default="true" id="17042c66-e029-4daa-ae57-c36530c01a05" name="Default" comment="user reg done">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/devise/shared/_links.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/devise/mailer/confirmation_instructions.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/initializers/devise.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/devise/passwords/edit.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/devise/confirmations/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/devise/passwords/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/devise/unlocks/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/devise/mailer/reset_password_instructions.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/devise/mailer/unlock_instructions.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/user.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mk1.iws" />
@@ -18,7 +24,7 @@
     <file path="/pice.html" changelist="17042c66-e029-4daa-ae57-c36530c01a05" time="1379159799393" ignored="false" />
     <file path="/show.html.erb" changelist="17042c66-e029-4daa-ae57-c36530c01a05" time="1383746788406" ignored="false" />
     <file path="/application.html.erb" changelist="17042c66-e029-4daa-ae57-c36530c01a05" time="1388216617949" ignored="false" />
-    <file path="/Dummy.txt" changelist="17042c66-e029-4daa-ae57-c36530c01a05" time="1383903339624" ignored="false" />
+    <file path="/Dummy.txt" changelist="17042c66-e029-4daa-ae57-c36530c01a05" time="1388246599434" ignored="false" />
     <file path="/index.html.erb" changelist="17042c66-e029-4daa-ae57-c36530c01a05" time="1383871498418" ignored="false" />
     <file path="$PROJECT_DIR$/../momkids_1/app/models/photo.rb" changelist="17042c66-e029-4daa-ae57-c36530c01a05" time="1382161735209" ignored="false" />
     <file path="/photo.rb" changelist="17042c66-e029-4daa-ae57-c36530c01a05" time="1382832052569" ignored="false" />
@@ -75,7 +81,15 @@
         <entry file="file://$PROJECT_DIR$/app/views/store/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="11" column="103" selection-start="276" selection-end="276" vertical-scroll-proportion="-6.875">
-              <folding />
+              <folding>
+                <marker date="1383871521543" expanded="true" signature="3:59" placeholder="if ... end" />
+                <marker date="1383871521543" expanded="true" signature="261:1017" placeholder="do ... end" />
+                <marker date="1383871521543" expanded="true" signature="394:546" placeholder="do ... end" />
+                <marker date="1383871521543" expanded="true" signature="416:533" placeholder="if ... end" />
+                <marker date="1383871521543" expanded="true" signature="1302:1793" placeholder="do ... end" />
+                <marker date="1383871521543" expanded="true" signature="1363:1526" placeholder="do ... end" />
+                <marker date="1383871521543" expanded="true" signature="1385:1504" placeholder="if ... end" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,7 +98,13 @@
         <entry file="file://$PROJECT_DIR$/app/views/store/things.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="5" column="79" selection-start="338" selection-end="338" vertical-scroll-proportion="-3.125">
-              <folding />
+              <folding>
+                <marker date="1383866929035" expanded="true" signature="177:220" placeholder="if ... end" />
+                <marker date="1383866929035" expanded="true" signature="311:356" placeholder="if ... end" />
+                <marker date="1383866929035" expanded="true" signature="447:1449" placeholder="do ... end" />
+                <marker date="1383866929035" expanded="true" signature="614:805" placeholder="do ... end" />
+                <marker date="1383866929035" expanded="true" signature="641:781" placeholder="if ... end" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,15 +131,36 @@
         <entry file="file://$PROJECT_DIR$/app/views/products/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="65" selection-start="33" selection-end="33" vertical-scroll-proportion="-0.0">
-              <folding />
+              <folding>
+                <marker date="1383833361675" expanded="true" signature="56:888" placeholder="..." />
+                <marker date="1383833361675" expanded="true" signature="78:881" placeholder="..." />
+                <marker date="1383833361675" expanded="true" signature="105:870" placeholder="..." />
+                <marker date="1383833361675" expanded="true" signature="161:771" placeholder="..." />
+                <marker date="1383833361675" expanded="true" signature="205:438" placeholder="..." />
+                <marker date="1383833361675" expanded="true" signature="482:756" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.12820514">
+            <state line="26" column="85" selection-start="657" selection-end="657" vertical-scroll-proportion="-16.25">
+              <folding>
+                <marker date="1388221390215" expanded="true" signature="223:385" placeholder="..." />
+                <marker date="1388221390215" expanded="true" signature="305:374" placeholder="..." />
+                <marker date="1388221390215" expanded="true" signature="417:568" placeholder="..." />
+                <marker date="1388221390215" expanded="true" signature="502:557" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="devise.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-6.4144487">
               <folding />
             </state>
           </provider>
@@ -292,6 +333,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mk1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mk1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="initializers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -741,7 +800,11 @@
       <created>1383903345944</created>
       <updated>1383903345944</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="user reg done">
+      <created>1388245549677</created>
+      <updated>1388245549677</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -754,11 +817,11 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961375" sideWeight="0.6703786" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960254" sideWeight="0.6702619" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2746781" sideWeight="0.6703786" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2746781" sideWeight="0.66146994" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26232114" sideWeight="0.28659475" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33853006" sideWeight="0.5004292" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33853006" sideWeight="0.49957082" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33853006" sideWeight="0.49957082" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -810,7 +873,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="user reg done" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -825,6 +888,7 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="v1" />
+    <MESSAGE value="user reg done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -832,13 +896,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/review_photo.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/review_photos/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="0" selection-start="85" selection-end="85" vertical-scroll-proportion="0.08886256">
@@ -870,14 +927,28 @@
     <entry file="file://$PROJECT_DIR$/app/views/store/things.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="79" selection-start="338" selection-end="338" vertical-scroll-proportion="-3.125">
-          <folding />
+          <folding>
+            <marker date="1383866929035" expanded="true" signature="177:220" placeholder="if ... end" />
+            <marker date="1383866929035" expanded="true" signature="311:356" placeholder="if ... end" />
+            <marker date="1383866929035" expanded="true" signature="447:1449" placeholder="do ... end" />
+            <marker date="1383866929035" expanded="true" signature="614:805" placeholder="do ... end" />
+            <marker date="1383866929035" expanded="true" signature="641:781" placeholder="if ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/store/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="103" selection-start="276" selection-end="276" vertical-scroll-proportion="-6.875">
-          <folding />
+          <folding>
+            <marker date="1383871521543" expanded="true" signature="3:59" placeholder="if ... end" />
+            <marker date="1383871521543" expanded="true" signature="261:1017" placeholder="do ... end" />
+            <marker date="1383871521543" expanded="true" signature="394:546" placeholder="do ... end" />
+            <marker date="1383871521543" expanded="true" signature="416:533" placeholder="if ... end" />
+            <marker date="1383871521543" expanded="true" signature="1302:1793" placeholder="do ... end" />
+            <marker date="1383871521543" expanded="true" signature="1363:1526" placeholder="do ... end" />
+            <marker date="1383871521543" expanded="true" signature="1385:1504" placeholder="if ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -926,7 +997,14 @@
     <entry file="file://$PROJECT_DIR$/app/views/products/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="65" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1383833361675" expanded="true" signature="56:888" placeholder="..." />
+            <marker date="1383833361675" expanded="true" signature="78:881" placeholder="..." />
+            <marker date="1383833361675" expanded="true" signature="105:870" placeholder="..." />
+            <marker date="1383833361675" expanded="true" signature="161:771" placeholder="..." />
+            <marker date="1383833361675" expanded="true" signature="205:438" placeholder="..." />
+            <marker date="1383833361675" expanded="true" signature="482:756" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -939,7 +1017,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.12820514">
+        <state line="26" column="85" selection-start="657" selection-end="657" vertical-scroll-proportion="-16.25">
+          <folding>
+            <marker date="1388221390215" expanded="true" signature="223:385" placeholder="..." />
+            <marker date="1388221390215" expanded="true" signature="305:374" placeholder="..." />
+            <marker date="1388221390215" expanded="true" signature="417:568" placeholder="..." />
+            <marker date="1388221390215" expanded="true" signature="502:557" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-6.4144487">
           <folding />
         </state>
       </provider>
