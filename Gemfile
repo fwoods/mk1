@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.14'
 
@@ -25,6 +25,11 @@ gem 'therubyracer'
 gem 'execjs'
 gem 'paperclip'
 gem 'will_paginate','~>3.0'
+
+gem 'devise'
+gem 'omniauth'
+gem 'json'
+gem 'omniauth-weibo-oauth2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
